@@ -11,6 +11,7 @@ import com.epa.aircent.adapter.AircentAdapter
 import com.epa.aircent.databinding.ActivityMainBinding
 import com.epa.aircent.fragments.*
 import com.epa.aircent.model.AircentModel
+import com.epa.aircent.retrofit.retro.retrofit
 import com.epa.aircent.service.AircentApi
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.OkHttpClient
@@ -26,9 +27,9 @@ class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
 
 
     lateinit var binding: ActivityMainBinding
-    private val BASE_URL = "https://api.schiphol.nl/"
-    private var aircentModel: ArrayList<AircentModel>? = null
-    private var aircentViewAdapt: AircentAdapter? = null
+   // private val BASE_URL = "https://api.schiphol.nl/"
+   // private var aircentModel: ArrayList<AircentModel>? = null
+   // private var aircentViewAdapt: AircentAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
 
         //https://api.schiphol.nl/public-flights/aircrafttypes
         //b09b05ce272fbffce2189348ae86ed3e
-        //2.key
+
 
         val airplanesFragment = AirplanesFragment()
         val airlinesFragment = AirlinesFragment()
@@ -69,52 +70,56 @@ class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
     }
     private fun loadData(){
 
-        val logging = HttpLoggingInterceptor()
+      /*  val logging = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(logging)
             .build()
-        val retrofit = Retrofit.Builder()
+      val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
+  */
+       /* val service = retrofit.create(AircentApi::class.java)
+        val call = service.getAircraftTypes()
 
-        val service = retrofit.create(AircentApi::class.java)
-        val call = service.getData()
 
-        call.enqueue(object : Callback<List<AircentModel>>{
-            override fun onResponse(
-                call: Call<List<AircentModel>>,
-                response: Response<List<AircentModel>>
-            ) {
-                if (response.isSuccessful){
-                    response.body()?.let {
-                        aircentModel = ArrayList(it)
 
-                        aircentModel?.let {
-                            aircentViewAdapt = AircentAdapter(it,this@MainActivity )
-                            recyclerView.adapter = aircentViewAdapt
+        if (call != null) {
+            call.enqueue(object : Callback<List<AircentModel>>{
+                override fun onResponse(
+                    call: Call<List<AircentModel>>,
+                    response: Response<List<AircentModel>>
+                ) {
+                    if (response.isSuccessful){
+                        response.body()?.let {
+                            aircentModel = ArrayList(it)
+
+                            aircentModel?.let {
+                                aircentViewAdapt = AircentAdapter(it,this@MainActivity )
+                                recyclerView.adapter = aircentViewAdapt
+                            }
+
+
+                            /*for (aircentModel: AircentModel in aircentModel!!){
+                               println(aircentModel.longDescription)
+                               println(aircentModel.iataMain)
+
+                           }
+                            */
+
                         }
-
-
-                       /*for (aircentModel: AircentModel in aircentModel!!){
-                           println(aircentModel.longDescription)
-                           println(aircentModel.iataMain)
-
-                       }
-                        */
-
                     }
                 }
-            }
 
-            override fun onFailure(call: Call<List<AircentModel>>, t: Throwable) {
+                override fun onFailure(call: Call<List<AircentModel>>, t: Throwable) {
 
-            }
+                }
 
-        })
+            })
+        } */
     }
 
     private  fun makeCurrentFragment(fragment: Fragment) =

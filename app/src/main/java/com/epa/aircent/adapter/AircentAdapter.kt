@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.epa.aircent.R
+import com.epa.aircent.fragments.AirplanesFragment
 import com.epa.aircent.model.AircentModel
 import kotlinx.android.synthetic.main.fragment_airplanes.view.*
-import okhttp3.internal.http2.Http2Connection
 
-class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private val listener: Listener):
+class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private val listener: AirplanesFragment):
     RecyclerView.Adapter<AircentAdapter.RowHolder>() {
 
     interface  Listener{

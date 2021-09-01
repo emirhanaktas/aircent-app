@@ -10,8 +10,7 @@ import retrofit2.http.Query
 
 interface AircentApi {
 
-   @GET("b09b05ce272fbffce2189348ae86ed3e")
-   fun getData(): Call<List<AircentModel>>
+
 
 
     @Headers(
