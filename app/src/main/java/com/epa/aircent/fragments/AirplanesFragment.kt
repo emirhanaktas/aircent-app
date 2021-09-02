@@ -64,6 +64,10 @@ class AirplanesFragment : Fragment(), AircentAdapter.Listener {
                     }
                 }
 
+                override fun onFailure(call: Call<AircentModel>, t: Throwable) {
+                    error("error")
+                }
+
             })
         }
 
