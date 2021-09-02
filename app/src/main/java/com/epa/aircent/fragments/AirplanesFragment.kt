@@ -18,7 +18,7 @@ import retrofit2.Response
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class AirplanesFragment : Fragment() {
+class AirplanesFragment : Fragment(), AircentAdapter.Listener {
 
     private var param1: String? = null
     private var param2: String? = null
@@ -32,60 +32,45 @@ class AirplanesFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val service = retro.retrofit.create(AircentApi::class.java)
-        val call = service.getAircraftTypes()
-
-
+        val service = retro.getRetrofit()
+        val call = service?.getAircraftTypes()
 
         if (call != null) {
-            call.enqueue(object : Callback<List<AircentModel>>{
+            call.enqueue(object: Callback<AircentModel>{
                 override fun onResponse(
-                    call: Call<List<AircentModel>>,
-                    response: Response<List<AircentModel>>
+                    call: Call<AircentModel>,
+                    response: Response<AircentModel?>
                 ) {
                     if (response.isSuccessful){
                         response.body()?.let {
-                            aircentModel = ArrayList(it)
+                            aircentModel = ArrayList()
 
                             aircentModel?.let {
                                 aircentViewAdapt = AircentAdapter(it,this@AirplanesFragment )
                                 recyclerView.adapter = aircentViewAdapt
                             }
 
-
                             /*for (aircentModel: AircentModel in aircentModel!!){
                                println(aircentModel.longDescription)
                                println(aircentModel.iataMain)
-
                            }
                             */
-
                         }
                     }
-                }
-
-                override fun onFailure(call: Call<List<AircentModel>>, t: Throwable) {
-
                 }
 
             })
         }
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_airplanes, container, false)
 
     }
-
-
     companion object {
-
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             AirplanesFragment().apply {
@@ -96,6 +81,9 @@ class AirplanesFragment : Fragment() {
             }
     }
 
+    override fun onItemClick(aircentModel: AircentModel) {
+
+    }
 }
 
 

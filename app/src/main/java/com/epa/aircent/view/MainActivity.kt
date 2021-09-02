@@ -11,7 +11,6 @@ import com.epa.aircent.adapter.AircentAdapter
 import com.epa.aircent.databinding.ActivityMainBinding
 import com.epa.aircent.fragments.*
 import com.epa.aircent.model.AircentModel
-import com.epa.aircent.retrofit.retro.retrofit
 import com.epa.aircent.service.AircentApi
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.OkHttpClient

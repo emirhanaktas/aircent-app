@@ -9,7 +9,7 @@ import com.epa.aircent.fragments.AirplanesFragment
 import com.epa.aircent.model.AircentModel
 import kotlinx.android.synthetic.main.fragment_airplanes.view.*
 
-class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private val listener: AirplanesFragment):
+class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private val listener: AircentAdapter.Listener):
     RecyclerView.Adapter<AircentAdapter.RowHolder>() {
 
     interface  Listener{
