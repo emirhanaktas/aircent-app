@@ -8,6 +8,7 @@ import com.epa.aircent.R
 import com.epa.aircent.fragments.AirplanesFragment
 import com.epa.aircent.model.AircentModel
 import kotlinx.android.synthetic.main.fragment_airplanes.view.*
+import kotlinx.android.synthetic.main.row_layout.view.*
 
 class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private val listener: AircentAdapter.Listener):
     RecyclerView.Adapter<AircentAdapter.RowHolder>() {
@@ -38,6 +39,10 @@ class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private v
         return aircentList.count()
     }
 }
+
+
+
+
 
 
 

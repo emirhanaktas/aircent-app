@@ -2,12 +2,12 @@ package com.epa.aircent.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.epa.aircent.R
 import com.epa.aircent.adapter.AircentAdapter
+
 import com.epa.aircent.databinding.ActivityMainBinding
 import com.epa.aircent.fragments.*
 import com.epa.aircent.model.AircentModel

@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.epa.aircent.R
 import com.epa.aircent.adapter.AircentAdapter
+
+import com.epa.aircent.databinding.FragmentAirplanesBinding
 import com.epa.aircent.model.AircentModel
 import com.epa.aircent.retrofit.retro
-import com.epa.aircent.service.AircentApi
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_airplanes.*
+import kotlinx.android.synthetic.main.fragment_airplanes.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,15 +21,19 @@ import retrofit2.Response
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class AirplanesFragment : Fragment(), AircentAdapter.Listener {
+class AirplanesFragment: Fragment(), AircentAdapter.Listener {
 
+    lateinit var binding: FragmentAirplanesBinding
     private var param1: String? = null
     private var param2: String? = null
     private var aircentModel: ArrayList<AircentModel>? = null
     private var aircentViewAdapt: AircentAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+        binding = FragmentAirplanesBinding.inflate(layoutInflater)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -88,6 +95,8 @@ class AirplanesFragment : Fragment(), AircentAdapter.Listener {
     override fun onItemClick(aircentModel: AircentModel) {
 
     }
+
 }
+
 
 
