@@ -32,7 +32,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        binding = FragmentAirplanesBinding.inflate(layoutInflater)
+
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -79,7 +79,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
         }
 
         return inflater.inflate(R.layout.fragment_airplanes, container, false)
-
+        return binding.root
     }
     companion object {
         @JvmStatic

@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.epa.aircent.R
+import com.epa.aircent.databinding.ActivityMainBinding
+import com.epa.aircent.databinding.RowLayoutBinding
 import com.epa.aircent.fragments.AirplanesFragment
 import com.epa.aircent.model.AircentModel
 import kotlinx.android.synthetic.main.fragment_airplanes.view.*
@@ -12,6 +14,8 @@ import kotlinx.android.synthetic.main.row_layout.view.*
 
 class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private val listener: AircentAdapter.Listener):
     RecyclerView.Adapter<AircentAdapter.RowHolder>() {
+
+    private val layoutManager: RecyclerView.LayoutManager? = null
 
     interface  Listener{
         fun  onItemClick(aircentModel: AircentModel)
@@ -27,6 +31,8 @@ class AircentAdapter(private val aircentList: ArrayList<AircentModel>, private v
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
+
+
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_layout, parent, false)
         return  RowHolder(view)
     }
