@@ -1,12 +1,10 @@
 package com.epa.aircent.service
 
 import com.epa.aircent.`object`.AircentConst
+import com.epa.aircent.model.AircraftTypes
 import retrofit2.Call
-import com.epa.aircent.model.AircentModel
 import retrofit2.http.GET
 import retrofit2.http.Headers
-import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface AircentApi {
 
@@ -19,7 +17,7 @@ interface AircentApi {
         "app_key:" + AircentConst.API_KEY,
         "ResourceVersion: v4")
     @GET("public-flights/aircrafttypes?page=1")
-    open fun getAircraftTypes(): Call<AircentModel>
+    open fun getAircraftTypes(): Call<AircraftTypes.AircraftType>
 
 
 

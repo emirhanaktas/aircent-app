@@ -1,12 +1,23 @@
 package com.epa.aircent.model
 
+
 import com.google.gson.annotations.SerializedName
+import androidx.annotation.Keep
 
+@Keep
 data class AircraftTypes(
-
-    @SerializedName("iataMain") var iataMain : String,
-    @SerializedName("iataSub") var iataSub : String,
-    @SerializedName("longDescription") var longDescription : String,
-    @SerializedName("shortDescription") var shortDescription : String
-
-)
+    @SerializedName("aircraftTypes")
+    val aircraftTypes: List<AircraftType>
+) {
+    @Keep
+    data class AircraftType(
+        @SerializedName("iataMain")
+        val iataMain: String? = "",
+        @SerializedName("iataSub")
+        val iataSub: String? = "",
+        @SerializedName("longDescription")
+        val longDescription: String? = "",
+        @SerializedName("shortDescription")
+        val shortDescription: String? = ""
+    )
+}

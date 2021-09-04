@@ -1,7 +1,5 @@
 package com.epa.aircent.retrofit
 
-import com.epa.aircent.adapter.AircentAdapter
-import com.epa.aircent.model.AircentModel
 import com.epa.aircent.service.AircentApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

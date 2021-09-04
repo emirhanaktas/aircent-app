@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.epa.aircent.R
 import com.epa.aircent.adapter.AircentAdapter
-
 import com.epa.aircent.databinding.FragmentAirplanesBinding
-import com.epa.aircent.model.AircentModel
+import com.epa.aircent.model.AircraftTypes
 import com.epa.aircent.retrofit.retro
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_airplanes.*
@@ -26,7 +27,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
     lateinit var binding: FragmentAirplanesBinding
     private var param1: String? = null
     private var param2: String? = null
-    private var aircentModel: ArrayList<AircentModel>? = null
+    private var aircentModel: ArrayList<AircraftTypes.AircraftType>? = null
     private var aircentViewAdapt: AircentAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +39,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,11 +49,13 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
         val service = retro.getRetrofit()
         val call = service?.getAircraftTypes()
 
+
+
         if (call != null) {
-            call.enqueue(object: Callback<AircentModel>{
+            call.enqueue(object: Callback<AircraftTypes.AircraftType>{
                 override fun onResponse(
-                    call: Call<AircentModel>,
-                    response: Response<AircentModel?>
+                    call: Call<AircraftTypes.AircraftType>,
+                    response: Response<AircraftTypes.AircraftType?>
                 ) {
                     if (response.isSuccessful){
                         response.body()?.let {
@@ -71,7 +75,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
                     }
                 }
 
-                override fun onFailure(call: Call<AircentModel>, t: Throwable) {
+                override fun onFailure(call: Call<AircraftTypes.AircraftType>, t: Throwable) {
                     error("error")
                 }
 
@@ -92,7 +96,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
             }
     }
 
-    override fun onItemClick(aircentModel: AircentModel) {
+    override fun onItemClick(aircraftTypes: AircraftTypes.AircraftType) {
 
     }
 

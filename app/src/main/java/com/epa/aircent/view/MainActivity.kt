@@ -3,23 +3,13 @@ package com.epa.aircent.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.epa.aircent.R
 import com.epa.aircent.adapter.AircentAdapter
 
 import com.epa.aircent.databinding.ActivityMainBinding
 import com.epa.aircent.fragments.*
-import com.epa.aircent.model.AircentModel
-import com.epa.aircent.service.AircentApi
+import com.epa.aircent.model.AircraftTypes
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
@@ -127,7 +117,7 @@ class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
             commit()
         }
 
-    override fun onItemClick(aircentModel: AircentModel) {
+    override fun onItemClick(aircraftTypes: AircraftTypes.AircraftType) {
             //Toast.makeText("this", "Clicked: ${aircentModel.longDescription}",Toast.LENGTH_LONG).show()
     }
 
