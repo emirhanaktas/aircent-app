@@ -14,8 +14,6 @@ class AircentAdapter(private val aircentList: ArrayList<AircraftTypes.AircraftTy
 
 
 
-
-
     interface  Listener{
         fun  onItemClick(aircraftTypes: AircraftTypes.AircraftType)
     }

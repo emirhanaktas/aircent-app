@@ -35,19 +35,28 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
         super.onCreate(savedInstanceState)
 
 
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
+
+
 
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
+
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager =  layoutManager
 
         val service = retro.getRetrofit()
         val call = service?.getAircraftTypes()
+
 
 
 
@@ -57,6 +66,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
                     call: Call<AircraftTypes.AircraftType>,
                     response: Response<AircraftTypes.AircraftType?>
                 ) {
+
                     if (response.isSuccessful){
                         response.body()?.let {
                             aircentModel = ArrayList()
