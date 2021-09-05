@@ -51,8 +51,8 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
 
     ): View? {
 
-        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
-        recyclerView.layoutManager =  layoutManager
+        //    val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
+        //recyclerView.layoutManager =  layoutManager
 
         val service = retro.getRetrofit()
         val call = service?.getAircraftTypes()
