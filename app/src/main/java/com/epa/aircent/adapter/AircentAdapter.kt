@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.NonNull
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.epa.aircent.databinding.RowLayoutBinding
 import com.epa.aircent.model.AircraftTypes
@@ -30,6 +31,7 @@ class AircentAdapter(private val aircentList: ArrayList<AircraftTypes.AircraftTy
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
+
 
 
         //val view = LayoutInflater.from(parent.context).inflate(R.layout.row_layout, parent, false)

@@ -35,7 +35,6 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
         super.onCreate(savedInstanceState)
 
 
-
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -51,8 +50,8 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
 
     ): View? {
 
-        //    val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
-        //recyclerView.layoutManager =  layoutManager
+      val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
+      recyclerView.layoutManager =  layoutManager
 
         val service = retro.getRetrofit()
         val call = service?.getAircraftTypes()
