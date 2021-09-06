@@ -19,6 +19,7 @@ class AircentAdapter(private val aircentList: ArrayList<AircraftTypes.AircraftTy
     }
     class RowHolder(val binding: RowLayoutBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(aircraftTypes: AircraftTypes.AircraftType, position: Int, listener: Listener ){
+
             itemView.setOnClickListener{
                 listener.onItemClick(aircraftTypes)
             }

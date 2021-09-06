@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 import com.epa.aircent.R
 import com.epa.aircent.adapter.AircentAdapter
 import com.epa.aircent.databinding.FragmentAirplanesBinding
@@ -50,8 +51,8 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
 
     ): View? {
 
-      val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
-      recyclerView.layoutManager =  layoutManager
+      //val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(requireContext())
+      // recyclerView.layoutManager =  layoutManager
 
         val service = retro.getRetrofit()
         val call = service?.getAircraftTypes()
@@ -92,7 +93,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
         }
 
         return inflater.inflate(R.layout.fragment_airplanes, container, false)
-        return binding.root
+
     }
     companion object {
         @JvmStatic
