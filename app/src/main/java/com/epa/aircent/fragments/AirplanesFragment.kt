@@ -61,15 +61,15 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
 
 
         if (call != null) {
-            call.enqueue(object: Callback<AircraftTypes.AircraftType>{
+            call.enqueue(object: Callback<AircraftTypes>{
                 override fun onResponse(
-                    call: Call<AircraftTypes.AircraftType>,
-                    response: Response<AircraftTypes.AircraftType?>
+                    call: Call<AircraftTypes>,
+                    response: Response<AircraftTypes?>
                 ) {
 
                     if (response.isSuccessful){
                         response.body()?.let {
-                            aircentModel = ArrayList()
+                            aircentModel = ArrayList(it.aircraftTypes)
 
                             aircentModel?.let {
                                 aircentViewAdapt = AircentAdapter(it,this@AirplanesFragment )
@@ -85,7 +85,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
                     }
                 }
 
-                override fun onFailure(call: Call<AircraftTypes.AircraftType>, t: Throwable) {
+                override fun onFailure(call: Call<AircraftTypes>, t: Throwable) {
                     error("error")
                 }
 

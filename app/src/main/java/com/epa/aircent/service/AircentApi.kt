@@ -17,7 +17,7 @@ interface AircentApi {
         "app_key:" + AircentConst.API_KEY,
         "ResourceVersion: v4")
     @GET("public-flights/aircrafttypes?page=1")
-    open fun getAircraftTypes(): Call<AircraftTypes.AircraftType>
+    open fun getAircraftTypes(): Call<AircraftTypes>
 
 
 
