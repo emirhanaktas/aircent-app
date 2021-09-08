@@ -6,24 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.epa.aircent.R
+import com.epa.aircent.adapter.DestinationAdapter
+import com.epa.aircent.adapter.FlightsAdapter
+import com.epa.aircent.model.DestinationTypes
+import com.epa.aircent.model.FlightsTypes
+import com.epa.aircent.retrofit.retro
+import kotlinx.android.synthetic.main.fragment_airplanes.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FlightsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FlightsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+class FlightsFragment : Fragment(), FlightsAdapter.Listener {
     private var param1: String? = null
     private var param2: String? = null
+    private var flightsModel: ArrayList<FlightsTypes.Flight>? = null
+    private var flightsViewAdapter: FlightsAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -34,20 +39,43 @@ class FlightsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val service = retro.getRetrofit()
+        val call = service?.getFlightsTypes()
+
+        if (call != null) {
+            call.enqueue(object: Callback<FlightsTypes> {
+                override fun onResponse(
+                    call: Call<FlightsTypes>,
+                    response: Response<FlightsTypes?>
+                ) {
+
+                    if (response.isSuccessful){
+                        response.body()?.let {
+                            flightsModel = ArrayList(it.flights)
+
+                            flightsModel?.let {
+                                flightsViewAdapter = FlightsAdapter(it,this@FlightsFragment )
+                                recyclerView.adapter = flightsViewAdapter
+                            }
+
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<FlightsTypes>, t: Throwable) {
+                    error("error")
+                }
+
+            })
+        }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_flights, container, false)
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FlightsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             FlightsFragment().apply {
@@ -56,5 +84,9 @@ class FlightsFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onItemClick(flightsTypes: FlightsTypes.Flight) {
+
     }
 }

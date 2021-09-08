@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="130dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#a5a5a5"
-    android:layout_margin="6dp"
-
+    android:layout_margin="5dp"
     >
 
     <TextView
-        android:id="@+id/public_name"
+        android:id="@+id/flights_name"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:textSize="15sp"
@@ -28,33 +25,50 @@
     </TextView>
 
     <TextView
-        android:id="@+id/country_name"
+        android:id="@+id/gate_number"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="20dp"
         android:layout_marginTop="30dp"
         android:textColor="@android:color/white"
         android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@+id/public_name"
+        app:layout_constraintTop_toTopOf="@+id/flights_name"
         app:layout_constraintLeft_toRightOf="@+id/item_image"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginStart="120dp">
+        android:layout_marginStart="120dp"
+        >
 
     </TextView>
 
     <TextView
-        android:id="@+id/iadata_name"
+        android:id="@+id/aircraft_name"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
+        android:layout_height="20dp"
         android:layout_marginTop="30dp"
         android:textColor="@android:color/white"
         android:textSize="11sp"
-        app:layout_constraintTop_toTopOf="@+id/country_name"
+        app:layout_constraintTop_toTopOf="@+id/gate_number"
         app:layout_constraintLeft_toRightOf="@+id/item_image"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginStart="120dp">
+        android:layout_marginStart="120dp"
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/depature_time"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/white"
+        android:textSize="11sp"
+        app:layout_constraintTop_toTopOf="@+id/aircraft_name"
+        app:layout_constraintLeft_toRightOf="@+id/item_image"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="120dp"
+        >
 
     </TextView>
 
@@ -64,34 +78,10 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/ic_destinations"
-         />
-    <ImageView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/item_image2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="67dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintLeft_toLeftOf="@+id/item_image"
-        app:layout_constraintRight_toLeftOf="@+id/country_name"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/ic_baseline_domain"
-        />
-    <ImageView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/item_image3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="67dp"
-        android:layout_marginTop="67dp"
-        app:layout_constraintLeft_toLeftOf="@+id/item_image"
-        app:layout_constraintRight_toLeftOf="@+id/iadata_name"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/ic_baseline_more_horiz_24"
+        android:background="@drawable/ic_flights"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
