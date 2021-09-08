@@ -21,13 +21,10 @@ class DestinationAdapter(private val destinationList: ArrayList<DestinationTypes
             itemView.setOnClickListener{
                 listener.onItemClick(destinationTypes)
             }
-            binding.cityName.text = destinationTypes.city.toString()
+            binding.publicName.text = destinationTypes.publicName?.english.toString()
             binding.countryName.text = destinationTypes.country
             binding.iadataName.text = destinationTypes.iata.toString()
-
-
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
