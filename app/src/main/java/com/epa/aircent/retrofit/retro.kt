@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object retro {
-    private val BASE_URL = "https://api.schiphol.nl/"
+    private val BASE_URL = "https://api.schiphol.nl/public-flights/"
 
 
     private var aircentApi: AircentApi? = null

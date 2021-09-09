@@ -23,10 +23,10 @@ class FlightsAdapter (private val flightsList: ArrayList<FlightsTypes.Flight>, p
                  listener.onItemClick(flightsTypes)
              }
 
-            binding.flightsName.text = flightsTypes.flightName
-            binding.gateNumber.text = flightsTypes.gate.toString()
-            binding.aircraftName.text = flightsTypes.aircraftType.toString()
-            binding.depatureTime.text = flightsTypes.scheduleDate
+            binding.flightsName.text = "Fligth Name: " + flightsTypes.flightName
+            binding.gateNumber.text = "Gate: " + flightsTypes.gate.toString()
+            binding.aircraftName.text = "Aircraft: " + flightsTypes.aircraftType?.iataMain.toString()
+            binding.depatureTime.text = "Depature: " + flightsTypes.scheduleDate
 
          }
     }

@@ -21,7 +21,7 @@ interface AircentApi {
         "app_id:" + AircentConst.APP_ID,
         "app_key:" + AircentConst.API_KEY,
         "ResourceVersion: v4")
-    @GET("public-flights/aircrafttypes?page=1")
+    @GET("aircrafttypes?page=1")
     open fun getAircraftTypes(): Call<AircraftTypes>
 
     @Headers(
@@ -29,7 +29,7 @@ interface AircentApi {
         "app_id:" + DestinationConst.APP_ID,
         "app_key:" + DestinationConst.API_KEY,
         "ResourceVersion: v4")
-    @GET("public-flights/destinations?page=0")
+    @GET("destinations?page=0")
     open fun getDestinationTypes(): Call<DestinationTypes>
 
     @Headers(
@@ -37,7 +37,7 @@ interface AircentApi {
         "app_id:" + DestinationConst.APP_ID,
         "app_key:" + DestinationConst.API_KEY,
         "ResourceVersion: v4")
-    @GET("public-flights/airlines?page=0")
+    @GET("airlines?page=0")
     open fun getAirlinesTypes(): Call<AirlinesTypes>
 
     @Headers(
