@@ -1,8 +1,12 @@
 package com.epa.aircent.adapter
 
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
+import com.epa.aircent.R
 import com.epa.aircent.databinding.RowDestinationBinding
 import com.epa.aircent.databinding.RowLayoutBinding
 import com.epa.aircent.model.AircraftTypes
@@ -38,4 +42,6 @@ class DestinationAdapter(private val destinationList: ArrayList<DestinationTypes
     override fun getItemCount(): Int {
       return destinationList.count()
     }
+
+
 }

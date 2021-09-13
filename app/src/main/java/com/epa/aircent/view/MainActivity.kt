@@ -2,6 +2,9 @@ package com.epa.aircent.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -123,6 +126,7 @@ class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
     override fun onItemClick(aircraftTypes: AircraftTypes.AircraftType) {
             //Toast.makeText("this", "Clicked: ${aircentModel.longDescription}",Toast.LENGTH_LONG).show()
     }
+
 
 
 }

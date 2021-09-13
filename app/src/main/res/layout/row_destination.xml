@@ -93,5 +93,18 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/ic_baseline_more_horiz_24"
         />
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="36dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/item_image"
+        app:layout_constraintRight_toLeftOf="@id/item_image2"
+        android:layout_margin="15dp"
+
+        >
+
+    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,4 +66,18 @@
         app:civ_border_width="0dp"
         app:civ_border_color="#FF000000"/>
 
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="36dp"
+        android:background="@color/white"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/item_image"
+        app:layout_constraintRight_toLeftOf="@id/item_image3"
+        android:layout_margin="20dp"
+
+        >
+
+    </TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

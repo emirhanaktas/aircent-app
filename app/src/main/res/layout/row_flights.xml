@@ -103,6 +103,65 @@
         android:background="@drawable/ic_flights"
         />
 
+    <ImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/circle_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/line"
+        app:layout_constraintRight_toLeftOf="@+id/gate_number"
+        app:layout_constraintTop_toTopOf="@id/flights_name"
+        android:background="@drawable/ic_baseline_circle"
+        android:layout_marginBottom="38dp"
+
+        />
+
+
+
+    <ImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flight_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/line"
+        app:layout_constraintRight_toLeftOf="@+id/gate_number"
+        app:layout_constraintTop_toTopOf="@id/aircraft_name"
+        android:background="@drawable/ic_airplanes"
+        android:layout_marginBottom="38dp"
+
+        />
+
+    <ImageView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flights_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/line"
+        app:layout_constraintRight_toLeftOf="@+id/gate_number"
+        app:layout_constraintTop_toTopOf="@id/aircraft_name"
+        android:background="@drawable/ic_flights"
+        android:layout_marginTop="20dp"
+
+        />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="36dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/item_image"
+        app:layout_constraintRight_toLeftOf="@id/flights_name"
+        android:layout_margin="15dp"
+        android:id="@+id/line"
+
+        >
+
+    </TextView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

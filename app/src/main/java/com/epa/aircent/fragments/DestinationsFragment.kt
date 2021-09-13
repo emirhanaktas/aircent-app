@@ -1,11 +1,14 @@
 package com.epa.aircent.fragments
 
+import android.app.SearchManager
+import android.content.Context
 import android.os.Bundle
+import android.view.*
+import android.widget.Adapter
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
 import com.epa.aircent.R
 import com.epa.aircent.adapter.AircentAdapter
 import com.epa.aircent.adapter.DestinationAdapter
@@ -35,6 +38,27 @@ class DestinationsFragment : Fragment(), DestinationAdapter.Listener {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+    }
+    //SEARCHVIEW
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+
+        inflater.inflate(R.menu.destinations_menu, menu)
+        val search = menu?.findItem(R.id.action_search)
+        val searchView = search?.actionView as SearchView
+        searchView.queryHint = "Search Something!"
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                return true
+            }
+
+        })
+
+        return super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onCreateView(
@@ -92,4 +116,6 @@ class DestinationsFragment : Fragment(), DestinationAdapter.Listener {
     override fun onItemClick(destinationTypes: DestinationTypes.Destination) {
 
     }
+
+
 }
