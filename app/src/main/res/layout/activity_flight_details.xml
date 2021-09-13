@@ -336,7 +336,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <TextView
+    <Button
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/item_image"
         android:layout_width="100dp"
@@ -344,18 +344,18 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         app:civ_border_width="2dp"
-        android:background="@drawable/ic_baseline_circle"
+        android:backgroundTint="@color/yellow"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="@string/text_go_to"
-        android:textColor="@color/black"
+        android:text="BUY TICKET"
+        android:textColor="@color/cardview_dark_background"
         android:autoLink="web"
         android:linksClickable="true"
-        app:civ_border_color="#FFE801">
+         >
 
 
 
-    </TextView>
+    </Button>
 
 
 </LinearLayout>

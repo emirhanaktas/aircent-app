@@ -1,7 +1,11 @@
 package com.epa.aircent.view
 
+import android.content.Intent
+import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.FragmentManager
 import com.epa.aircent.R
@@ -12,6 +16,16 @@ class FlightDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flight_details)
+
+        val btn = findViewById<Button>(R.id.item_image)
+         
+        btn?.setOnClickListener() {
+
+
+            var url = "https://www.skyscanner.com.tr/";
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+
+        }
 
 
         val actionBar: ActionBar? = supportActionBar

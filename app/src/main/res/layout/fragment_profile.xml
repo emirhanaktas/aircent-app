@@ -37,6 +37,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="SIGN IN"
+        android:backgroundTint="@color/purple_700"
         android:layout_margin="20dp"
         android:textColor="@color/white"
         />
@@ -52,6 +53,7 @@
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:text="FORGOT PASSWORD"
+        android:backgroundTint="@color/purple_700"
         android:layout_margin="20dp"
         android:textSize="9sp"
         android:textColor="@color/white"
@@ -63,6 +65,7 @@
             android:layout_height="60dp"
             android:text="REGISTER"
             android:textSize="9sp"
+            android:backgroundTint="@color/purple_700"
             android:layout_margin="20dp"
             android:textColor="@color/white"
             />

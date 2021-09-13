@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.epa.aircent.R
 import com.epa.aircent.adapter.AircentAdapter
 import com.epa.aircent.adapter.DestinationAdapter
@@ -29,7 +30,7 @@ class DestinationsFragment : Fragment(), DestinationAdapter.Listener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Destinations"
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)

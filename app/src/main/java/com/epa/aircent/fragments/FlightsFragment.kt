@@ -34,7 +34,7 @@ class FlightsFragment : Fragment(), FlightsAdapter.Listener {
     var Flayout : ConstraintSet.Layout? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Flights"
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)

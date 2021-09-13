@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
         val view = binding.root
         setContentView(view)
 
+
         //https://api.schiphol.nl/public-flights/aircrafttypes
         //b09b05ce272fbffce2189348ae86ed3e
 

@@ -19,6 +19,10 @@ import kotlinx.android.synthetic.main.fragment_airplanes.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.appcompat.app.AppCompatActivity
+
+
+
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -34,7 +38,7 @@ class AirplanesFragment: Fragment(), AircentAdapter.Listener {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Airplanes"
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
