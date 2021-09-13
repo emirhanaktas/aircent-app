@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity(), AircentAdapter.Listener{
         //https://api.schiphol.nl/public-flights/aircrafttypes
         //b09b05ce272fbffce2189348ae86ed3e
 
-
         val airplanesFragment = AirplanesFragment()
         val airlinesFragment = AirlinesFragment()
         val destinationsFragment = DestinationsFragment()

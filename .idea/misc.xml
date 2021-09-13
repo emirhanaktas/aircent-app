@@ -5,17 +5,22 @@
       <map>
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/drawable/ic_baseline_domain.xml" value="0.2125" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.2125" />
+        <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/activity_flight_details.xml" value="0.33" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/fragment_airlines.xml" value="0.25" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/fragment_airplanes.xml" value="0.1" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/fragment_destinations.xml" value="0.1" />
+        <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/fragment_flight_details.xml" value="0.13451086956521738" />
+        <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/fragment_flight_details2.xml" value="0.19635416666666666" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/fragment_flights.xml" value="0.18229166666666666" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/row_airlines.xml" value="0.13451086956521738" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/row_destination.xml" value="0.2" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/row_flights.xml" value="0.13451086956521738" />
         <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/layout/row_layout.xml" value="0.22" />
-        <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/menu/airplanes_menu.xml" value="0.19635416666666666" />
+        <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/menu/airplanes_menu.xml" value="0.13" />
+        <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/menu/nav_menu.xml" value="0.19635416666666666" />
+        <entry key="..\:/Program Files/AndroidStudioProjects/AirCent/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2125" />
       </map>
     </option>
   </component>
